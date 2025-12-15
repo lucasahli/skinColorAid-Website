@@ -1,122 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkinColorAid – macOS App</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
-    .download-icon { transition: transform 0.25s ease; }
-    a:hover .download-icon { transform: translateY(2px); }
-    .icon-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, hsl(60,60%,50%), hsl(140,60%,50%), hsl(300,60%,60%));
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinColorAid – Perfect Skin Tones on macOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon-512x512.png">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Didact Gothic', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .download-icon { transition: transform 0.25s ease; }
+        a:hover .download-icon { transform: translateY(2px); }
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, hsl(140,80%,50%), hsl(60,80%,50%), hsl(300,80%,60%));
+            color: white;
+        }
+    </style>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="SkinColorAid – Perfect Skin Tones on macOS" />
+    <meta property="og:description" content="Stop guessing. Get perfect, natural skin tones in seconds. The universal color tool that works over any app on your Mac." />
+    <meta property="og:image" content="https://skincoloraid.com/assets/icons/favicon-512x512.png" />
+    <meta property="og:url" content="https://skincoloraid.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SkinColorAid – Perfect Skin Tones on macOS" />
+    <meta name="twitter:description" content="Stop guessing. Get perfect, natural skin tones in seconds. The universal color tool that works over any app on your Mac." />
+    <meta name="twitter:image" content="https://skincoloraid.com/assets/icons/favicon-512x512.png" />
 </head>
 <body class="bg-gray-950 text-gray-200">
 
-  <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-950 to-gray-900">
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-950 to-gray-900">
+    <!-- Logo -->
+    <img src="assets/icons/favicon-192x192.png" alt="SkinColorAid App Icon" class="w-24 h-24 mb-6 rounded-2xl shadow-lg">
+
     <h1 class="text-6xl font-bold text-white tracking-tight">SkinColorAid</h1>
+
     <p class="mt-6 text-xl text-gray-400 max-w-2xl">
-      A macOS app for precise skin tone analysis and matching – designed for creators, designers, and professionals.
+        Stop guessing. Get perfect, natural skin tones in seconds. The universal color tool that works over any app on your Mac.
     </p>
-    <a href="https://github.com/lucasahli/skincoloraid/releases/latest"
-       class="mt-10 inline-flex items-center gap-2 bg-gradient-to-r from-[hsl(60,60%,50%)] via-[hsl(140,60%,50%)] to-[hsl(300,60%,60%)] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition text-lg">
-      <i data-lucide="download" class="download-icon w-5 h-5"></i>
-      Download for macOS
+
+    <a href="#YOUR_APP_STORE_LINK_HERE"
+       class="mt-10 inline-flex items-center gap-2 bg-gradient-to-r from-[hsl(140,80%,45%)] via-[hsl(60,80%,45%)] to-[hsl(300,80%,45%)] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition text-lg">
+        <i data-lucide="download" class="download-icon w-5 h-5"></i>
+        Get it on the Mac App Store
     </a>
+    <p class="mt-4 text-gray-500 text-sm">Just $9.99 — a one-time purchase.</p>
+
     <div class="mt-16 max-w-4xl w-full">
-      <img src="assets/screenshot.png" alt="App Screenshot" class="rounded-2xl shadow-2xl border border-gray-800">
+        <img src="assets/screenshot.png" alt="SkinColorAid app showing skin tone analysis over a portrait" class="rounded-2xl shadow-2xl border border-gray-800">
     </div>
-  </section>
+</section>
 
-  <!-- Features -->
-  <section class="max-w-6xl mx-auto py-36 px-6 space-y-40">
+<section class="max-w-6xl mx-auto py-36 px-6 space-y-40">
 
-    <!-- Feature 1 -->
     <div class="grid md:grid-cols-2 gap-20 items-center">
-      <div>
-        <div class="icon-badge mb-6">
-          <i data-lucide="droplet" class="w-8 h-8"></i>
+        <div>
+            <div class="icon-badge mb-6">
+                <i data-lucide="eye" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6">Instant, Intuitive Feedback</h3>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                SkinColorAid overlays a simple guide on your screen. Magenta means the skin tone is too red, green means it's shifted yellow/green. When the overlay turns yellow, your color is perfect. It’s that simple.
+            </p>
         </div>
-        <h3 class="text-4xl font-bold text-white mb-6">Color Precision</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Advanced algorithms ensure reliable skin tone recognition and matching.  
-          Every shade is captured with high accuracy, empowering creators and designers.
-        </p>
-      </div>
-      <div class="flex justify-center">
-        <img src="assets/feature1.png" alt="Color Precision" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
-      </div>
+        <div class="flex justify-center">
+            <img src="assets/feature1.png" alt="Visual feedback on a portrait" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
+        </div>
     </div>
 
-    <!-- Feature 2 -->
     <div class="grid md:grid-cols-2 gap-20 items-center">
-      <div class="order-2 md:order-1 flex justify-center">
-        <img src="assets/feature2.png" alt="macOS Speed" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
-      </div>
-      <div class="order-1 md:order-2">
-        <div class="icon-badge mb-6">
-          <i data-lucide="rocket" class="w-8 h-8"></i>
+        <div class="order-2 md:order-1 flex justify-center">
+            <img src="assets/feature2.png" alt="Logos of Lightroom, Photoshop, DaVinci Resolve" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
         </div>
-        <h3 class="text-4xl font-bold text-white mb-6">Native macOS Speed</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          SkinColorAid is built natively for macOS, optimized for blazing performance  
-          and seamless integration with your workflow.
-        </p>
-      </div>
+        <div class="order-1 md:order-2">
+            <div class="icon-badge mb-6">
+                <i data-lucide="layers" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6">Works With Every Tool</h3>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                Whether you're in Adobe Lightroom, Photoshop, DaVinci Resolve, Capture One, or even a web browser—SkinColorAid works seamlessly on top. It’s the missing link in your workflow, providing consistent feedback in any app.
+            </p>
+        </div>
     </div>
 
-    <!-- Feature 3 -->
     <div class="grid md:grid-cols-2 gap-20 items-center">
-      <div>
-        <div class="icon-badge mb-6">
-          <i data-lucide="workflow" class="w-8 h-8"></i>
+        <div>
+            <div class="icon-badge mb-6">
+                <i data-lucide="rocket" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6">Edit Faster, With Confidence</h3>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                Cut your color correction time in half. No more endless, tiny slider adjustments. Make precise, confident changes and move on to the next shot. Deliver consistent, professional results to your clients every single time.
+            </p>
         </div>
-        <h3 class="text-4xl font-bold text-white mb-6">Workflow Friendly</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          A clean, intuitive interface that integrates smoothly with creative tools.  
-          Spend less time navigating menus, and more time creating.
-        </p>
-      </div>
-      <div class="flex justify-center">
-        <img src="assets/feature3.png" alt="Workflow Friendly" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
-      </div>
+        <div class="flex justify-center">
+            <img src="assets/feature3.png" alt="A photo editor's timeline showing faster workflow" class="rounded-2xl shadow-2xl border border-gray-800 max-w-lg">
+        </div>
     </div>
 
-  </section>
+</section>
 
-  <!-- Call to Action -->
-  <section class="bg-gradient-to-r from-[hsl(60,60%,50%)] via-[hsl(140,60%,50%)] to-[hsl(300,60%,60%)] text-center py-28 px-6">
-    <h2 class="text-5xl font-bold text-white">Ready to try SkinColorAid?</h2>
-    <p class="mt-6 text-xl text-white/90">Download now and simplify skin tone analysis on macOS.</p>
-    <a href="https://github.com/lucasahli/skincoloraid/releases/latest"
+<section class="bg-gradient-to-r from-[hsl(140,60%,50%)] via-[hsl(60,60%,50%)] to-[hsl(300,60%,60%)] text-center py-28 px-6">
+    <h2 class="text-5xl font-bold text-white">Transform Your Color Workflow</h2>
+    <p class="mt-6 text-xl text-white/90 max-w-3xl mx-auto">Spend less time correcting and more time creating. Get the essential tool for perfect skin tones and start editing with total confidence.</p>
+    <a href="#YOUR_APP_STORE_LINK_HERE"
        class="mt-10 inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-gray-100">
-      <i data-lucide="download" class="download-icon w-5 h-5"></i>
-      Download for macOS
+        <i data-lucide="download" class="download-icon w-5 h-5"></i>
+        Get SkinColorAid on the Mac App Store
     </a>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer class="py-10 text-center text-gray-500 bg-gray-950 border-t border-gray-800">
-    <p>&copy; 2025 Luca Sahli. All rights reserved.</p>
-    <p><a href="https://github.com/lucasahli" class="underline hover:text-pink-400">View on GitHub</a></p>
-  </footer>
 
-  <script>
+<footer class="py-10 text-center text-gray-500 bg-gray-950 border-t border-gray-800">
+    <h3 class="text-xl font-bold">Privacy Policy</h3>
+    <div class="flex items-center justify-center gap-2">
+        <p>This app does not collect, store, or share any personal user data. All processing happens locally on your macOS device.</p>
+    </div>
+    <hr class="my-6">
+    <div class="flex items-center justify-center gap-2">
+        <img src="assets/icons/favicon-32x32.png" alt="SkinColorAid Logo" class="w-6 h-6">
+        <p>&copy; 2025 Luca Sahli. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
     lucide.createIcons();
-  </script>
+</script>
 </body>
 </html>
