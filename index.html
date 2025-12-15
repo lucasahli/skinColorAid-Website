@@ -3,181 +3,240 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkinColorAid – Perfect Skin Tones on macOS</title>
+    <title>SkinColorAid – Professional Skin Tone Monitor for macOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body { font-family: 'Didact Gothic', sans-serif; background-color: #050505; }
-        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
-
-        /* The Vectorscope Gradient - distinct identity */
-        .vectorscope-gradient {
-            background: linear-gradient(135deg, #00d26a 0%, #fcd34d 50%, #d946ef 100%);
+        :root {
+            --bg-dark: #050505;
+            --accent-green: #00d26a;
+            --accent-skin: #fcd34d;
+            --accent-magenta: #d946ef;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #4ade80, #fcd34d, #e879f9);
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* The "Vectorscope" Gradient Text */
+        .text-scope-gradient {
+            background: linear-gradient(to right, var(--accent-green), var(--accent-skin), var(--accent-magenta));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Soft Glow behind hero */
-        .hero-glow {
-            background: radial-gradient(circle at center, rgba(252, 211, 77, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
-        }
-
-        .download-icon { transition: transform 0.25s ease; }
-        a:hover .download-icon { transform: translateY(2px); }
-
-        /* Grayscale logos that color on hover */
-        .software-logo {
-            filter: grayscale(100%) opacity(0.6);
+        /* Button Gradient */
+        .btn-scope {
+            background: linear-gradient(135deg, rgba(0,210,106,0.1), rgba(252,211,77,0.1), rgba(217,70,239,0.1));
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }
+        .btn-scope:hover {
+            border-color: rgba(252,211,77,0.5);
+            box-shadow: 0 0 20px rgba(252,211,77,0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Abstract Vectorscope Graphic Animation */
+        .scope-circle {
+            animation: pulse-border 4s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); }
+            50% { box-shadow: 0 0 0 10px rgba(252, 211, 77, 0.05); }
+            100% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); }
+        }
+
+        /* Logo styling */
+        .software-logo {
+            height: 3rem; /* 48px standard height */
+            width: auto;
+            filter: grayscale(100%) brightness(0.7);
+            opacity: 0.6;
+            transition: all 0.4s ease;
+        }
         .software-logo:hover {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.05);
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body class="text-gray-300 antialiased selection:bg-yellow-500/30 selection:text-yellow-200">
 
-<nav class="fixed w-full z-50 top-0 start-0 border-b border-white/10 bg-[#050505]/80 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
-        <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/icons/favicon-32x32.png" class="h-8 w-8 rounded-lg" alt="Logo">
-            <span class="self-center text-xl font-heading font-bold whitespace-nowrap text-white">SkinColorAid</span>
+<nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
+        <a href="#" class="flex items-center gap-3 group">
+            <img src="assets/icons/favicon-32x32.png" class="h-8 w-8 rounded-lg opacity-80 group-hover:opacity-100 transition" alt="Logo">
+            <span class="font-heading font-bold text-lg text-white tracking-wide">SkinColorAid</span>
         </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <a href="#download" class="text-white bg-white/10 hover:bg-white/20 focus:ring-4 focus:outline-none focus:ring-gray-700 font-medium rounded-lg text-sm px-4 py-2 text-center transition">
-                Get App
-            </a>
-        </div>
+        <a href="#download" class="hidden md:inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white transition uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            v1.0 Available
+        </a>
     </div>
 </nav>
 
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-20 hero-glow overflow-hidden">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-yellow-500/10 via-purple-500/10 to-transparent rounded-full blur-3xl -z-10"></div>
+<section class="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-20">
 
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-400 mb-8 backdrop-blur-sm">
-        <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
-        v1.0 Now Available for macOS
+    <div class="mb-12 relative w-32 h-32 rounded-full border border-white/10 bg-white/5 flex items-center justify-center scope-circle backdrop-blur-sm">
+        <div class="absolute w-[1px] h-16 bg-gradient-to-t from-transparent to-yellow-400 origin-bottom transform -rotate-[35deg] bottom-1/2 left-1/2 opacity-80"></div>
+        <div class="w-1 h-1 bg-white rounded-full opacity-50"></div>
+        <div class="absolute top-2 left-2 text-[10px] font-mono text-green-500/50 font-bold">G</div>
+        <div class="absolute top-2 right-2 text-[10px] font-mono text-purple-500/50 font-bold">M</div>
     </div>
 
-    <h1 class="text-6xl md:text-7xl font-bold text-white tracking-tight max-w-4xl leading-[1.1]">
-        Calibrate your eye.<br>
-        <span class="text-gradient">Perfect your skin tones.</span>
+    <h1 class="text-5xl md:text-7xl font-heading font-bold text-white tracking-tight max-w-4xl leading-[1.1] mb-8">
+        Stop guessing.<br>
+        <span class="text-scope-gradient">Trust the scope.</span>
     </h1>
 
-    <p class="mt-8 text-xl text-gray-400 max-w-2xl leading-relaxed">
-        The vectorscope overlay that lives on your screen. Get objective color feedback in Lightroom, Resolve, or any app you use.
+    <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10">
+        The universal skin tone analyzer for macOS. Get objective, real-time vectorscope data over Lightroom, Premiere, or any app on your screen.
     </p>
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
         <a href="#YOUR_APP_STORE_LINK_HERE" id="download"
-           class="vectorscope-gradient text-gray-900 font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(252,211,77,0.3)] hover:shadow-[0_0_30px_rgba(252,211,77,0.5)] transition text-lg inline-flex items-center justify-center gap-2">
-            <i data-lucide="download" class="download-icon w-5 h-5"></i>
-            Download on App Store
+           class="btn-scope text-white font-medium px-8 py-4 rounded-xl flex items-center justify-center gap-3 group">
+            <i data-lucide="download" class="w-5 h-5 group-hover:translate-y-0.5 transition-transform"></i>
+            <span>Download on App Store</span>
+            <span class="bg-white/10 px-2 py-0.5 rounded text-xs font-mono ml-2">$9.99</span>
         </a>
     </div>
-    <p class="mt-4 text-gray-500 text-sm">One-time purchase of $9.99. No subscriptions.</p>
+    <p class="mt-6 text-gray-600 text-xs font-mono uppercase tracking-widest">
+        Native Apple Silicon Support
+    </p>
 
-    <div class="mt-20 max-w-5xl w-full relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-yellow-500/20 to-purple-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
-        <img src="assets/screenshot.png" alt="App Screenshot" class="relative rounded-xl shadow-2xl border border-white/10 bg-[#0a0a0a]">
+    <div class="mt-24 max-w-5xl w-full relative">
+        <div class="absolute -inset-1 bg-gradient-to-r from-green-500/10 via-yellow-500/10 to-purple-500/10 rounded-2xl blur-xl"></div>
+        <img src="assets/screenshot.png" alt="SkinColorAid Interface" class="relative rounded-lg shadow-2xl border border-white/10 bg-[#0a0a0a]">
     </div>
 </section>
 
-<section class="py-10 border-y border-white/5 bg-white/[0.02]">
+<section class="py-20 border-y border-white/5 bg-[#080808]">
     <div class="max-w-6xl mx-auto px-6 text-center">
-        <p class="text-sm font-heading text-gray-500 uppercase tracking-widest mb-8">Works seamlessly over</p>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <img src="assets/logos/capture-one.png" alt="Capture One" class="h-10 md:h-12 w-auto software-logo">
-            <img src="assets/logos/davinci.png" alt="DaVinci Resolve" class="h-10 md:h-12 w-auto software-logo">
-            <img src="assets/logos/lightroom.png" alt="Lightroom" class="h-10 md:h-12 w-auto software-logo">
-            <img src="assets/logos/photoshop.png" alt="Photoshop" class="h-10 md:h-12 w-auto software-logo">
-            <img src="assets/logos/final-cut.png" alt="Final Cut Pro" class="h-10 md:h-12 w-auto software-logo">
-            <img src="assets/logos/premiere.png" alt="Premiere Pro" class="h-10 md:h-12 w-auto software-logo">
+        <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-10">Works strictly over</h3>
+        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-16 grayscale-logos">
+            <img src="assets/logos/lightroom.svg" alt="Lightroom" class="software-logo">
+            <img src="assets/logos/photoshop.svg" alt="Photoshop" class="software-logo">
+            <img src="assets/logos/premiere.svg" alt="Premiere Pro" class="software-logo">
+            <img src="assets/logos/davinci.png" alt="DaVinci Resolve" class="software-logo">
+            <img src="assets/logos/capture-one.png" alt="Capture One" class="software-logo">
+            <img src="assets/logos/final-cut.png" alt="Final Cut Pro" class="software-logo">
         </div>
     </div>
 </section>
 
-<section class="max-w-6xl mx-auto py-32 px-6 space-y-40">
-
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-            <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-yellow-400 mb-6 border border-white/10">
-                <i data-lucide="eye" class="w-6 h-6"></i>
+<section class="max-w-6xl mx-auto py-32 px-6">
+    <div class="grid md:grid-cols-2 gap-16">
+        <div class="bg-white/[0.02] p-8 rounded-2xl border border-white/5">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="eye-off" class="text-red-400"></i>
+                <h3 class="text-xl font-bold text-white">The Problem</h3>
             </div>
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Read the Skin Line</h3>
-            <p class="text-gray-400 text-lg leading-relaxed">
-                Professional colorists rely on the "Skin Tone Line" on a vectorscope. SkinColorAid brings this logic to a simple overlay. <br><br>
-                <span class="text-purple-400">Magenta</span> = Too Red.<br>
-                <span class="text-green-400">Green</span> = Too Yellow.<br>
-                <span class="text-yellow-400 font-bold">Gold</span> = Perfect Balance.
+            <p class="text-gray-400 leading-relaxed">
+                Your eyes adapt to color casts in seconds. What looks "natural" after 10 minutes of editing might actually be totally green or magenta. Monitors drift, and lighting conditions change. <strong>Subjective grading is risky.</strong>
             </p>
         </div>
-        <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-purple-500/20 blur-2xl rounded-full opacity-40"></div>
-            <img src="assets/feature1.png" alt="Visual feedback" class="relative rounded-2xl shadow-2xl border border-white/10">
-        </div>
-    </div>
 
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 relative">
-            <img src="assets/feature2.png" alt="Workflow integration" class="relative rounded-2xl shadow-2xl border border-white/10">
-        </div>
-        <div class="order-1 md:order-2">
-            <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-green-400 mb-6 border border-white/10">
-                <i data-lucide="layers" class="w-6 h-6"></i>
+        <div class="bg-gradient-to-br from-green-500/5 to-purple-500/5 p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-32 bg-yellow-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <i data-lucide="activity" class="text-yellow-400"></i>
+                    <h3 class="text-xl font-bold text-white">The Solution</h3>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    Data doesn't lie. SkinColorAid gives you a floating vectorscope that reads pixels directly from your screen. It provides an <strong>absolute reference</strong> for skin tones, ensuring consistency across every shot in your timeline.
+                </p>
             </div>
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Universal Overlay</h3>
-            <p class="text-gray-400 text-lg leading-relaxed">
-                It doesn't matter if you are grading in DaVinci Resolve, editing photos in Lightroom, or watching a YouTube video. SkinColorAid floats on top of your macOS window, providing consistent analysis regardless of the software underneath.
-            </p>
-        </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-            <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-purple-400 mb-6 border border-white/10">
-                <i data-lucide="zap" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Stop Guessing</h3>
-            <p class="text-gray-400 text-lg leading-relaxed">
-                Eyes fatigue. Monitors drift. Data doesn't lie. Cut your color correction time in half by knowing exactly which slider to pull. Deliver consistent, professional results to your clients every single time.
-            </p>
-        </div>
-        <div class="relative">
-            <img src="assets/feature3.png" alt="Faster workflow" class="relative rounded-2xl shadow-2xl border border-white/10">
         </div>
     </div>
 </section>
 
-<section class="relative py-28 px-6 text-center overflow-hidden">
-    <div class="absolute inset-0 vectorscope-gradient opacity-10 blur-3xl"></div>
-    <div class="relative z-10 max-w-3xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-white">Ready for perfect color?</h2>
-        <p class="mt-6 text-xl text-gray-400">Join photographers and colorists who have stopped guessing.</p>
+<section class="max-w-6xl mx-auto pb-32 px-6 space-y-32">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-5">
+            <span class="text-green-400 font-mono text-xs uppercase tracking-widest mb-2 block">Step 01</span>
+            <h3 class="text-3xl font-heading font-bold text-white mb-6">Analyze.</h3>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                Activate the overlay with a global shortcut. Hover over any face in your video or photo. The indicator moves in real-time.
+            </p>
+            <ul class="space-y-3 text-gray-500 text-sm font-mono">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Works on video playback</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> 60fps sampling rate</li>
+            </ul>
+        </div>
+        <div class="md:col-span-7">
+            <img src="assets/feature1.png" alt="Analysis UI" class="rounded-xl shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition duration-500">
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 order-2 md:order-1">
+            <img src="assets/feature2.png" alt="Correction Workflow" class="rounded-xl shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition duration-500">
+        </div>
+        <div class="md:col-span-5 order-1 md:order-2">
+            <span class="text-yellow-400 font-mono text-xs uppercase tracking-widest mb-2 block">Step 02</span>
+            <h3 class="text-3xl font-heading font-bold text-white mb-6">Correct.</h3>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                Adjust your tint and temp sliders. Watch the indicator snap to the <span class="text-yellow-300">Skin Tone Line</span>.
+                <br><br>
+                No complex graphs—just a simple "Target Lock" for your colors.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="border-t border-white/10 bg-[#020202]">
+    <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2 class="text-3xl font-heading font-bold text-white mb-8">Professional grade accuracy.</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div class="p-4 border border-white/5 rounded-lg">
+                <div class="text-2xl font-bold text-white mb-1">P3</div>
+                <div class="text-xs text-gray-500 font-mono uppercase">Color Space</div>
+            </div>
+            <div class="p-4 border border-white/5 rounded-lg">
+                <div class="text-2xl font-bold text-white mb-1">&lt;1%</div>
+                <div class="text-xs text-gray-500 font-mono uppercase">CPU Usage</div>
+            </div>
+            <div class="p-4 border border-white/5 rounded-lg">
+                <div class="text-2xl font-bold text-white mb-1">M-Chip</div>
+                <div class="text-xs text-gray-500 font-mono uppercase">Optimized</div>
+            </div>
+            <div class="p-4 border border-white/5 rounded-lg">
+                <div class="text-2xl font-bold text-white mb-1">macOS</div>
+                <div class="text-xs text-gray-500 font-mono uppercase">12.0+</div>
+            </div>
+        </div>
+
         <a href="#YOUR_APP_STORE_LINK_HERE"
-           class="mt-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-gray-200 transition">
-            <i data-lucide="apple" class="w-5 h-5"></i>
-            Get SkinColorAid
+           class="inline-flex items-center gap-2 bg-white text-black font-bold px-8 py-3 rounded-lg hover:bg-gray-200 transition">
+            Get SkinColorAid for $9.99
         </a>
     </div>
 </section>
 
-<footer class="py-12 border-t border-white/10 bg-[#020202] text-sm text-gray-500">
+<footer class="py-12 border-t border-white/10 bg-black text-xs font-mono text-gray-600">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-2">
-            <img src="assets/icons/favicon-32x32.png" alt="Logo" class="w-6 h-6 grayscale opacity-50">
-            <p>&copy; 2025 Luca Sahli. All rights reserved.</p>
+        <div class="flex items-center gap-3">
+            <img src="assets/icons/favicon-32x32.png" alt="Logo" class="w-6 h-6 grayscale opacity-30">
+            <p>&copy; 2025 Luca Sahli</p>
         </div>
         <div class="flex gap-8">
-            <a href="impressum.html" class="hover:text-white transition">Impressum</a>
-            <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
-            <a href="mailto:support@skincoloraid.com" class="hover:text-white transition">Contact</a>
+            <a href="impressum.html" class="hover:text-gray-300 transition">IMPRESSUM</a>
+            <a href="privacy.html" class="hover:text-gray-300 transition">PRIVACY</a>
+            <a href="mailto:support@skincoloraid.com" class="hover:text-gray-300 transition">SUPPORT</a>
         </div>
     </div>
 </footer>

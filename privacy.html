@@ -5,55 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - SkinColorAid</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Didact Gothic', sans-serif; background-color: #050505; color: #d1d5db; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #9ca3af; }
         h1, h2 { font-family: 'Space Grotesk', sans-serif; color: white; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        a { color: #fcd34d; text-decoration: underline; text-decoration-color: rgba(252, 211, 77, 0.3); }
+        a:hover { text-decoration-color: rgba(252, 211, 77, 1); }
     </style>
 </head>
 <body class="bg-[#050505]">
 
-<nav class="border-b border-white/10 bg-[#050505]">
-    <div class="max-w-3xl mx-auto px-6 py-6">
-        <a href="index.html" class="text-gray-400 hover:text-white transition">&larr; Back to Home</a>
+<nav class="border-b border-white/5 bg-[#050505] p-6">
+    <div class="max-w-3xl mx-auto">
+        <a href="index.html" class="font-mono text-xs text-gray-500 hover:text-white transition uppercase no-underline">&larr; Return to Home</a>
     </div>
 </nav>
 
-<main class="max-w-3xl mx-auto px-6 py-16">
-    <h1 class="text-4xl font-bold mb-8">Privacy Policy</h1>
-    <p class="text-gray-500 mb-8">Last Updated: December 15, 2025</p>
+<main class="max-w-3xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-bold mb-2">Privacy Policy</h1>
+    <p class="font-mono text-xs text-gray-600 mb-12 uppercase">Last Updated: December 15, 2025</p>
 
-    <div class="space-y-8 leading-relaxed">
+    <div class="space-y-12 leading-relaxed">
         <section>
-            <h2 class="text-2xl font-bold mb-4">1. Overview</h2>
-            <p>Respecting your privacy is not just a legal requirement for us; it is a core principle. <strong>SkinColorAid does not collect, store, share, or sell your personal data.</strong></p>
+            <h2 class="text-xl font-bold mb-4 text-white">1. Data Minimization</h2>
+            <p>SkinColorAid is built on the principle of absolute privacy. <strong>We do not collect, store, share, or sell your personal data.</strong> The app functions as a standalone tool on your machine.</p>
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold mb-4">2. Data Collection</h2>
-            <p>The App operates entirely locally on your macOS device.
-            <ul class="list-disc pl-5 mt-2 space-y-2">
-                <li>We do not transmit screen contents to any server.</li>
-                <li>We do not analyze your images for facial recognition or identity.</li>
-                <li>All color analysis is performed in Random Access Memory (RAM) and is discarded immediately after the overlay is drawn.</li>
+            <h2 class="text-xl font-bold mb-4 text-white">2. Local Processing Only</h2>
+            <p>The application analyzes color values from your screen buffer. This processing happens entirely within your device's Random Access Memory (RAM).
+            <ul class="list-disc pl-5 mt-4 space-y-2 border-l-2 border-white/10 ml-1">
+                <li>No data is sent to the cloud.</li>
+                <li>No analytics or tracking scripts are embedded in the app.</li>
+                <li>Screen data is discarded the millisecond the analysis frame is rendered.</li>
             </ul>
             </p>
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold mb-4">3. Screen Recording Permissions</h2>
-            <p>To function, SkinColorAid requires "Screen Recording" permission on macOS. This is strictly used to sample the pixel colors under your mouse cursor or within the selection area to provide color feedback. This data never leaves your computer.</p>
+            <h2 class="text-xl font-bold mb-4 text-white">3. macOS Permissions</h2>
+            <p>The app requires <strong>Screen Recording</strong> permissions to sample pixels. This is a technical requirement of the macOS operating system for any tool that "sees" what is on screen (like color pickers). We use this strictly to calculate color vectors.</p>
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold mb-4">4. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <a href="mailto:support@skincoloraid.com" class="text-yellow-400 hover:text-yellow-300">support@skincoloraid.com</a>
+            <h2 class="text-xl font-bold mb-4 text-white">4. Contact</h2>
+            <p>Questions? Email us at <a href="mailto:support@skincoloraid.com">support@skincoloraid.com</a>.</p>
         </section>
     </div>
 </main>
 
-<footer class="border-t border-white/10 mt-20 py-10 text-center text-gray-600 text-sm">
+<footer class="border-t border-white/5 mt-20 py-10 text-center font-mono text-xs text-gray-700">
     &copy; 2025 Luca Sahli.
 </footer>
 </body>
