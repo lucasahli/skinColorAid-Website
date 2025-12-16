@@ -24,34 +24,31 @@
 
 <main class="max-w-3xl mx-auto px-6 py-20">
     <h1 class="text-4xl font-bold mb-2">Privacy Policy</h1>
-    <p class="font-mono text-xs text-gray-600 mb-12 uppercase">Last Updated: December 15, 2025</p>
+    <p class="font-mono text-xs text-gray-600 mb-12 uppercase">Last Updated: December 16, 2025</p>
 
     <div class="space-y-12 leading-relaxed">
         <section>
-            <h2 class="text-xl font-bold mb-4 text-white">1. Data Minimization</h2>
-            <p>SkinColorAid is built on the principle of absolute privacy. <strong>We do not collect, store, share, or sell your personal data.</strong> The app functions as a standalone tool on your machine.</p>
+            <h2 class="text-xl font-bold mb-4 text-white">1. Overview</h2>
+            <p>SkinColorAid respects your privacy. <strong>We do not collect, store, share, or sell your personal data.</strong> The app functions entirely offline on your device.</p>
         </section>
 
         <section>
-            <h2 class="text-xl font-bold mb-4 text-white">2. Local Processing Only</h2>
-            <p>The application analyzes color values from your screen buffer. This processing happens entirely within your device's Random Access Memory (RAM).
+            <h2 class="text-xl font-bold mb-4 text-white">2. Screen Analysis Data</h2>
+            <p>To provide color overlays, the App analyzes the pixels within the <strong>screen area you explicitly select</strong>.
             <ul class="list-disc pl-5 mt-4 space-y-2 border-l-2 border-white/10 ml-1">
-                <li>No data is sent to the cloud.</li>
-                <li>No analytics or tracking scripts are embedded in the app.</li>
-                <li>Screen data is discarded the millisecond the analysis frame is rendered.</li>
+                <li>Analysis occurs locally in your Mac's RAM.</li>
+                <li>No screenshots or image data are saved to your hard drive.</li>
+                <li>No image data is transmitted to any external server.</li>
+                <li>The data is discarded immediately after the overlay is drawn.</li>
             </ul>
             </p>
         </section>
 
         <section>
             <h2 class="text-xl font-bold mb-4 text-white">3. macOS Permissions</h2>
-            <p>The app requires <strong>Screen Recording</strong> permissions to sample pixels. This is a technical requirement of the macOS operating system for any tool that "sees" what is on screen (like color pickers). We use this strictly to calculate color vectors.</p>
+            <p>The app requires <strong>Screen Recording</strong> permissions. This is necessary for the app to "see" the pixels in the area you select to apply the color metrics (Exposure, White Balance, or Skin Hue). This permission is used solely for this local analysis.</p>
         </section>
 
-        <section>
-            <h2 class="text-xl font-bold mb-4 text-white">4. Contact</h2>
-            <p>Questions? Email us at <a href="mailto:support@skincoloraid.com">support@skincoloraid.com</a>.</p>
-        </section>
     </div>
 </main>
 
